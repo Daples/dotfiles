@@ -1,0 +1,3 @@
+[submodule ".config/nvim/pack/themes/opt/dracula"]
+	path = .config/nvim/pack/themes/opt/dracula
+	url = https://github.com/dracula/vim
