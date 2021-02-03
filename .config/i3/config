@@ -162,7 +162,6 @@ workspace $w11 output eDP-1-1
 
 # Apps default worskpace
 # Browser
-assign [class="Brave-browser"] $w1
 assign [class="firefox"]       $w1
 assign [class="opera" ]        $w1
 
@@ -171,7 +170,6 @@ assign [class="Emacs"]       $w2
 assign [class="Gedit"]       $w2
 assign [class="st-256color"] $w2
 assign [class="Alacritty"]   $w2
-assign [class="kitty"]       $w2
 
 # Viewers and media editors
 assign [class="Evince"]              $w3
@@ -193,7 +191,6 @@ assign [class="MATLAB R2020b - academic use"] $w4
 # Social
 assign [class="discord"]                             $w5
 assign [class="Microsoft Teams - Preview"]           $w5
-assign [class="Slack"]                               $w5
 assign [class="zoom"]                                $w5
 assign [class="whatsapp-nativefier-d40211"]          $w5
 assign [class="TelegramDesktop"]                     $w5
@@ -221,6 +218,7 @@ assign [class="Ntcardvt"] $w8
 # Miscellaneous apps
 for_window [class="^Steam$"] move to workspace $w9
 assign [class="VirtualBox Manager"]            $w9
+assign [class="Pcmanfm"]                       $w9
 
 # Background apps
 for_window [class="Spotify"] move to workspace $w10
@@ -298,7 +296,6 @@ bindsym $mod+Shift+KP_8 exec popcorntime
 bindsym $mod+Shift+KP_9 exec stremio
 
 # Startup apps
-exec $browser
 exec $term
 
 # Xresources loading
@@ -307,10 +304,6 @@ exec xrdb $HOME/.config/X11/Xresources
 # Screenshots manager
 # Tested with flameshot v0.8.5
 exec_always flameshot
-bindsym --release Print exec $HOME/.bin/screenshot
-bindsym --release $mod+Print exec flameshot gui -p $HOME/pictures/screenshots
-bindsym --release Ctrl+Print exec flameshot full -c -p $HOME/pictures/screenshots
-
 
 # ========== Aesthetics =========
 # Resolution
@@ -326,7 +319,6 @@ exec_always picom
 exec_always --no-startup-id $HOME/.config/polybar/launch-bar.sh
 
 # Tray icons
-exec_always $HOME/.bin/tray-optimus-manager.sh
 exec_always nm-applet
 
 # Dracula theme for containers
