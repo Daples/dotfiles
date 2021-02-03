@@ -12,3 +12,6 @@ export dav=/home/daples/externals/hdd/Dropbox/DAVID-SAMUEL/_David_
 
 # Dotfiles
 alias dfiles='/usr/bin/git --git-dir=$HOME/git/dotfiles.git --work-tree=$HOME'
+
+# Aliases
+alias ls='ls --color=always -v'
