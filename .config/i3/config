@@ -163,7 +163,7 @@ workspace $w11 output eDP-1-1
 # Apps default worskpace
 # Browser
 assign [class="firefox"]       $w1
-assign [class="opera" ]        $w1
+assign [class="Opera" ]        $w1
 
 # Terminal and text editors
 assign [class="Emacs"]       $w2
