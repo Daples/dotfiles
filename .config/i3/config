@@ -311,6 +311,9 @@ exec_always feh --bg-scale /home/daples/Pictures/pink.jpg
 # Transparency
 exec_always picom
 
+# Conky
+exec conky
+
 # Bar: tested with Polybar 3.5.4
 exec_always --no-startup-id $HOME/.config/polybar/launch-bar.sh
 
