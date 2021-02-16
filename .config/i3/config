@@ -180,14 +180,15 @@ assign [class="libreoffice-writer$"] $w3
 assign [class="Soffice"]             $w3
 assign [class="okular"]              $w3
 assign [class="Zathura"]             $w3
+assign [class="calibre"]             $w3
 
 # IDEs
-assign [class="jetbrains-pycharm-ce"]         $w4
-assign [class="java-lang-Thread"]             $w4
-assign [class="Java"]                         $w4
-assign [class="Eclipse"]                      $w4
-assign [class="MATLAB R2020b - academic use"] $w4
-assign [class="Atom"]                         $w4
+assign [class="jetbrains-pycharm-ce"] $w4
+assign [class="java-lang-Thread"]     $w4
+assign [class="Java"]                 $w4
+assign [class="Eclipse"]              $w4
+assign [class="MATLAB R2020b*"]       $w4
+assign [class="Atom"]                 $w4
 
 # Social
 assign [class="discord"]                             $w5
@@ -220,6 +221,9 @@ assign [class="Ntcardvt"] $w8
 for_window [class="^Steam$"] move to workspace $w9
 assign [class="VirtualBox Manager"]            $w9
 assign [class="Pcmanfm"]                       $w9
+assign [class="Minecraft Linux Launcher UI"]   $w9
+assign [class="mcpelauncher-client"]           $w9
+assign [class="AnyDesk"]                       $w9
 
 # Background apps
 for_window [class="Spotify"] move to workspace $w10
@@ -328,6 +332,3 @@ client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
-
-# Conky in desktop
-exec conky
