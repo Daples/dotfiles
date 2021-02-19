@@ -223,7 +223,7 @@ assign [class="VirtualBox Manager"]            $w9
 assign [class="Pcmanfm"]                       $w9
 assign [class="Minecraft Linux Launcher UI"]   $w9
 assign [class="mcpelauncher-client"]           $w9
-assign [class="AnyDesk"]                       $w9
+assign [class="Anydesk"]                       $w9
 
 # Background apps
 for_window [class="Spotify"] move to workspace $w10
