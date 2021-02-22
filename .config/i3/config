@@ -47,8 +47,8 @@ bindsym $mod+shift+a exec "$HOME/.bin/select-monitor.sh"
 # Brightness control
 # Tested with xorg-xbacklight 1.2.3
 # Pulse Audio controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 
 # Media player controls
