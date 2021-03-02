@@ -1,32 +1,3 @@
-## MANJARO PROMPT
-# Apply different settigns for different terminals
-case $(basename "$(cat "/proc/$PPID/comm")") in
-  login)
-      source /usr/share/zsh/zsh-maia-prompt
-    	alias x='startx ~/.xinitrc'
-    ;;
-  *)
-      if [[ $TERM == "linux" ]]; then
-        # TTY does not have powerline fonts
-        source /usr/share/zsh/zsh-maia-prompt
-        alias x='startx ~/.xinitrc'
-      elif [[ "$USE_POWERLINE" == "true" ]]; then
-        # Use powerline
-        source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-        [[ ! -f /usr/share/zsh/p10k.zsh ]] || source /usr/share/zsh/p10k.zsh
-        source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-        ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
-      else
-        # Don't use powerline anyway
-        source /usr/share/zsh/zsh-maia-prompt
-        source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-        ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
-      fi
-    ;;
-esac
-
 ## MANJARO zsh config
 
 # Options section
@@ -223,6 +194,35 @@ function mzc_termsupport_preexec {
 autoload -U add-zsh-hook
 add-zsh-hook precmd mzc_termsupport_precmd
 add-zsh-hook preexec mzc_termsupport_preexec
+
+## MANJARO PROMPT
+# Apply different settigns for different terminals
+case $(basename "$(cat "/proc/$PPID/comm")") in
+  login)
+      source /usr/share/zsh/zsh-maia-prompt
+    	alias x='startx ~/.xinitrc'
+    ;;
+  *)
+      if [[ $TERM == "linux" ]]; then
+        # TTY does not have powerline fonts
+        source /usr/share/zsh/zsh-maia-prompt
+        alias x='startx ~/.xinitrc'
+      elif [[ "$USE_POWERLINE" == "true" ]]; then
+        # Use powerline
+        source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+        [[ ! -f /usr/share/zsh/p10k.zsh ]] || source /usr/share/zsh/p10k.zsh
+        source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+        ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+      else
+        # Don't use powerline anyway
+        source /usr/share/zsh/zsh-maia-prompt
+        source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+        ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+      fi
+    ;;
+esac
 
 # Environment variables
 export dav=/home/daples/externals/hdd/Dropbox/DAVID-SAMUEL/_David_
