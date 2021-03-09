@@ -81,7 +81,7 @@ export LESS=-R
 # Use syntax highlighting
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Use history substring search
-source ~/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.config/zsh/zsh-history-substring-search.zsh
 # bind UP and DOWN arrow keys to history substring search
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -217,7 +217,7 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
       else
         # Don't use powerline anyway
         source ~/.config/zsh/zsh-maia-prompt
-        source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+        source ~/.config/zsh/zsh-autosuggestions.zsh
         ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
       fi
