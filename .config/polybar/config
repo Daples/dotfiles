@@ -343,9 +343,9 @@ bar-volume-empty-foreground = ${colors.foreground}
 ; Battery module
 [module/battery]
 type = internal/battery
-battery = BAT1
-adapter = ACAD
-full-at = 98
+battery = BAT0
+adapter = AC0
+full-at = 99
 
 ; Full label
 label-full              = %percentage%%
