@@ -225,8 +225,8 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
 esac
 
 # Environment variables
-export dav=/home/daples/externals/hdd/Dropbox/DAVID-SAMUEL/_David_
-export int=/home/daples/externals/hdd/Dropbox/DAVID-SAMUEL/_David_/internship-Belgium/1_internship
+export dav=/home/daples/Dropbox/DAVID-SAMUEL/_David_
+export int=/home/daples/Dropbox/DAVID-SAMUEL/_David_/internship-Belgium/1_internship
 
 # Git
 alias dfiles='/usr/bin/git --git-dir=$HOME/git/dotfiles.git --work-tree=$HOME'
