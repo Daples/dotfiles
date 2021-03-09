@@ -39,17 +39,12 @@ bindsym $mod+Shift+e mode "exit: [l]ogout, [r]eboot, [p]oweroff"
 # Tested with dmenu 5.0
 bindsym $mod+d exec dmenu_run
 
-# Select monitor layout
-bindsym $mod+shift+a exec "$HOME/.bin/select-monitor.sh"
-
-
 # ========== Media ===========
 # Brightness control
 # Tested with xorg-xbacklight 1.2.3
 # Pulse Audio controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
 
 # Media player controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -157,9 +152,6 @@ bindsym $mod+Ctrl+j move workspace to output down
 bindsym $mod+Ctrl+k move workspace to output up
 bindsym $mod+Ctrl+l move workspace to output right
 
-# Default workspace for second monitor
-workspace $w11 output eDP-1-1
-
 # Apps default worskpace
 # Browser
 assign [class="firefox"]       $w1
@@ -187,7 +179,7 @@ assign [class="jetbrains-pycharm-ce"] $w4
 assign [class="java-lang-Thread"]     $w4
 assign [class="Java"]                 $w4
 assign [class="Eclipse"]              $w4
-assign [class="MATLAB R2020b*"]       $w4
+assign [class="MATLAB*"]              $w4
 assign [class="Atom"]                 $w4
 
 # Social
@@ -224,6 +216,7 @@ assign [class="Pcmanfm"]                       $w9
 assign [class="Minecraft Linux Launcher UI"]   $w9
 assign [class="mcpelauncher-client"]           $w9
 assign [class="Anydesk"]                       $w9
+assign [class="Lutris"]                        $w9
 
 # Background apps
 for_window [class="Spotify"] move to workspace $w10
@@ -253,6 +246,9 @@ for_window [class="Matplotlib"] floating enable
 
 # Matlab Figures
 for_window [Title="Figure*"] floating enable
+
+# Origin
+for_window [instance="origin.exe"] floating enable
 
 # ========== Gaps configuration ==========
 # Borders size
@@ -306,11 +302,8 @@ exec xrdb $HOME/.config/X11/Xresources
 exec_always flameshot
 
 # ========== Aesthetics =========
-# Resolution
-exec xrandr -s 1920x1080
-
 # Background
-exec_always feh --bg-scale /home/daples/Pictures/pink.jpg
+exec_always feh --bg-scale /home/daples/pictures/ny.jpg
 
 # Transparency
 exec_always picom
