@@ -59,7 +59,6 @@ bindkey '^[[Z' undo                                             # Shift+tab undo
 alias cp="cp -i"                                                # Confirm before overwriting something
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
-alias gitu='git add . && git commit && git push'
 
 # Theming section
 autoload -U compinit colors zcalc
@@ -227,6 +226,10 @@ esac
 # Environment variables
 export dav=/home/daples/Dropbox/DAVID-SAMUEL/_David_
 export int=/home/daples/Dropbox/DAVID-SAMUEL/_David_/internship-Belgium/1_internship
+
+# Personal functions
+fpath=( ~/.bin "${fpath[@]}" )
+autoload -Uz $( ls ~/.bin )
 
 # Git
 alias dfiles='/usr/bin/git --git-dir=$HOME/git/dotfiles.git --work-tree=$HOME'
