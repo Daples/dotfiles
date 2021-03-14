@@ -1,0 +1,1 @@
+echo $1 | sudo tee /sys/devices/platform/tuxedo_keyboard/uw_kbd_bl_color/brightness
