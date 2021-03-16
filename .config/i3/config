@@ -217,6 +217,7 @@ assign [class="Minecraft Linux Launcher UI"]   $w9
 assign [class="mcpelauncher-client"]           $w9
 assign [class="Anydesk"]                       $w9
 assign [class="Lutris"]                        $w9
+assign [class="battle.net*"]                   $w9
 
 # Background apps
 for_window [class="Spotify"] move to workspace $w10
@@ -246,9 +247,6 @@ for_window [class="Matplotlib"] floating enable
 
 # Matlab Figures
 for_window [Title="Figure*"] floating enable
-
-# Origin
-for_window [instance="origin.exe"] floating enable
 
 # ========== Gaps configuration ==========
 # Borders size
