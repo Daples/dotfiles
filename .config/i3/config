@@ -204,15 +204,12 @@ assign [class="Lightdm-settings"] $w7
 assign [class="Font-manager"]     $w7
 assign [class="Nvidia-settings"]  $w7
 
-# Production apps
-assign [class="Audacity"] $w8
-assign [class="kdenlive"] $w8
-assign [class="Ntcardvt"] $w8
+# Explorer
+assign [class="Pcmanfm"] $w8
 
 # Miscellaneous apps
 for_window [class="^Steam$"] move to workspace $w9
 assign [class="VirtualBox Manager"]            $w9
-assign [class="Pcmanfm"]                       $w9
 assign [class="Minecraft Linux Launcher UI"]   $w9
 assign [class="mcpelauncher-client"]           $w9
 assign [class="Anydesk"]                       $w9
