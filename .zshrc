@@ -254,5 +254,15 @@ alias gpl='gitd pull'
 alias gr='gitd rm'
 alias gs='gitd status'
 
-# Aliases
+# LaTeX
+alias lmk="latexmk -pdf"
+alias lmks="lmk -shell-escape"
+
+files_to_keep=".*\.\(tex\|sty\|bst\|bib\|cls\)$"
+alias rmtrash='find . -maxdepth 1 -type f ! -regex "$files_to_keep" -delete'
+
+# ls
 alias ls='ls --color=always -v'
+
+# Autoremove
+alias autoremove="sudo pacman -Qdtq | sudo pacman -Rs -"
