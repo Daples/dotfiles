@@ -218,6 +218,8 @@ assign [class="mcpelauncher-client"]           $w9
 assign [class="Anydesk"]                       $w9
 assign [class="Lutris"]                        $w9
 assign [class="battle.net*"]                   $w9
+assign [class="minecraft-launcher"]            $w9
+assign [class="Minecraft*"]                    $w9
 
 # Background apps
 for_window [class="Spotify"] move to workspace $w10
@@ -298,6 +300,8 @@ exec xrdb $HOME/.config/X11/Xresources
 # Screenshots manager
 # Tested with flameshot v0.8.5
 exec_always flameshot
+bindsym --release $mod+Print exec flameshot gui -p $HOME/pictures/screenshots
+bindsym --release Ctrl+Print exec flameshot full -c -p $HOME/pictures/screenshots
 
 # ========== Aesthetics =========
 # Background
@@ -305,9 +309,6 @@ exec_always feh --bg-center /home/daples/pictures/br2049.jpg
 
 # Transparency
 exec_always picom
-
-# Conky
-exec conky
 
 # Bar: tested with Polybar 3.5.4
 exec_always --no-startup-id $HOME/.config/polybar/launch-bar.sh
