@@ -305,7 +305,7 @@ bindsym --release Ctrl+Print exec flameshot full -c -p $HOME/pictures/screenshot
 
 # ========== Aesthetics =========
 # Background
-exec_always feh --bg-center /home/daples/pictures/br2049.jpg
+exec_always feh --bg-scale /home/daples/pictures/wp.jpg
 
 # Transparency
 exec_always picom
