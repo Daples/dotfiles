@@ -157,8 +157,9 @@ bindsym $mod+Ctrl+l move workspace to output right
 
 # Apps default worskpace
 # Browser
-assign [class="firefox"]       $w1
-assign [class="Opera" ]        $w1
+assign [class="firefox"]                             $w1
+assign [class="Opera" ]                              $w1
+for_window [class="Google-chrome"] move to workspace $w1
 
 # Terminal and text editors
 assign [class="Emacs"]       $w2
@@ -191,7 +192,6 @@ assign [class="Microsoft Teams - Preview"]           $w5
 assign [class="zoom"]                                $w5
 assign [class="whatsapp-nativefier-d40211"]          $w5
 assign [class="TelegramDesktop"]                     $w5
-for_window [class="Google-chrome"] move to workspace $w5
 
 # Media
 assign [class="ffplay"]       $w6
@@ -220,6 +220,9 @@ assign [class="Lutris"]                        $w9
 assign [class="battle.net*"]                   $w9
 assign [class="minecraft-launcher"]            $w9
 assign [class="Minecraft*"]                    $w9
+assign [class="explorer.exe"]                  $w9
+assign [class="battle.net.exe"]                $w9
+assign [class="overwatch.exe"]                 $w9
 
 # Background apps
 for_window [class="Spotify"] move to workspace $w10
