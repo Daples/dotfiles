@@ -266,3 +266,6 @@ alias ls='ls --color=always -v'
 
 # Autoremove
 alias autoremove="sudo pacman -Qdtq | sudo pacman -Rs -"
+
+# Okular theme
+alias okular='QT_STYLE_OVERRIDE=Adwaita-Dark QT_QPA_PLATFORMTHEME=gtk3 okular'
