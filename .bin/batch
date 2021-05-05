@@ -1,0 +1,1 @@
+matlab -nosplash -nodesktop -r "try; cd $PWD; $1; catch; end; exit";
