@@ -226,6 +226,7 @@ esac
 # Environment variables
 export dav=/home/daples/Dropbox/DAVID-SAMUEL/_David_
 export int=/home/daples/Dropbox/DAVID-SAMUEL/_David_/internship-Belgium/1_internship
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 # Personal functions
 fpath=( ~/.bin "${fpath[@]}" )
