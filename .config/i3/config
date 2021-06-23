@@ -186,9 +186,9 @@ assign [class="com.github.xournalpp.xournalpp"] $w3
 assign [class="jetbrains-pycharm-ce"] $w4
 assign [class="java-lang-Thread"]     $w4
 assign [class="Java"]                 $w4
-assign [class="Eclipse"]              $w4
 assign [class="MATLAB*"]              $w4
 assign [class="Atom"]                 $w4
+assign [class="code-oss"]             $w4
 
 # Social
 assign [class="discord"]                             $w5
