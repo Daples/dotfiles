@@ -302,6 +302,7 @@ bindsym $mod+Shift+KP_9 exec stremio
 
 # Startup apps
 exec $term
+exec slack
 
 # Xresources loading
 exec xrdb $HOME/.config/X11/Xresources
