@@ -271,6 +271,7 @@ alias autoremove="sudo pacman -Qdtq | sudo pacman -Rs -"
 # Okular theme
 alias okular='QT_STYLE_OVERRIDE=Adwaita-Dark QT_QPA_PLATFORMTHEME=gtk3 okular'
 
-# Upgrade pip packages
-alias pip-upgrade="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
-alias pip-upgrade-venv="pip freeze | cut -d'=' -f1 | xargs -n1 pip install -U"
+# Update python
+awkCom='{ match ($0, ".*==", a); gsub ("=", "", a[0]); print a[0] }'
+instCom='xargs -n1 pip install --upgrade'
+alias uppy="pip list --outdated --format=freeze | awk '$awkCom' | $instCom"
