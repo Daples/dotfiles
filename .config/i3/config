@@ -158,6 +158,10 @@ bindsym $mod+Ctrl+j move workspace to output down
 bindsym $mod+Ctrl+k move workspace to output up
 bindsym $mod+Ctrl+l move workspace to output right
 
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
 # Apps default worskpace
 # Browser
 assign [class="firefox"]                             $w1
@@ -285,6 +289,7 @@ bindsym $mod+ctrl+t gaps inner all set 0, gaps outer all set 0
 # Keybinds
 bindsym $mod+Return exec $term
 bindsym $mod+s exec spotify
+bindsym $mod+c exec pcmanfm
 bindsym $mod+i exec $browser
 bindsym $mod+u exec google-chrome-stable --new-window $(xsel --clipboard --output)
 
@@ -311,6 +316,9 @@ exec xrdb $HOME/.config/X11/Xresources
 exec_always flameshot
 bindsym --release $mod+Print exec flameshot gui -p $HOME/pictures/screenshots
 bindsym --release Ctrl+Print exec flameshot full -c -p $HOME/pictures/screenshots
+
+# Default workspace for second monitor
+workspace $w11 output HDMI-0
 
 # ========== Aesthetics =========
 # Background
