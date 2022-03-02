@@ -60,22 +60,23 @@ border-top-size    = ${sizes.bar-offset-y}
 border-bottom-size = ${sizes.bar-bottom-gap}
 
 ; Distance of first and last module to bar
-padding-left  = 3
-padding-right = 3
+padding-left  = 1
+padding-right = 1
 
 ; Margin between modules
-module-margin-left  = 3
-module-margin-right = 2
+module-margin-left  = 1
+module-margin-right = 1
 
 ; Fonts
-font-0 = DejaVu Sans:size=10;1
-font-1 = FontAwesome:pixelsize=13;1
-font-2 = FontAwesome 5 Free:size=13;1
+font-0 = UbuntuMono Nerd Font Mono:size=13;0
+font-1 = UbuntuMono Nerd Font Mono:pixelsize=26;4
+font-2 = DejaVu Sans Mono:size=10;0
+font-3 = UbuntuMono Nerd Font Mono:pixelsize=15;1
 
 ; Position of each module
 modules-left   = i3
 modules-center = spotify previous playpause next
-modules-right  = cpu memory pulseaudio light battery date
+modules-right  = cpu memory pulseaudio light battery date pipe
 
 ; Position of the tray elements
 tray-position = right
@@ -121,9 +122,9 @@ module-margin-left  = 3
 module-margin-right = 2
 
 ; Fonts
-font-0 = Ubuntu Mono:size=10;1
-font-1 = FontAwesome:pixelsize=13;1
-font-2 = FontAwesome 5 Free:size=13;1
+font-0 = UbuntuMono Nerd Font Mono:size=13;0
+font-1 = UbuntuMono Nerd Font Mono:pixelsize=24;3
+font-2 = DejaVu Sans Mono:size=10;0
 
 ; Position of each module
 modules-left   = i3
@@ -134,6 +135,12 @@ cursor-click  = pointer
 cursor-scroll = ns-resize
 
 ;;;;;;;;;;; MODULES ;;;;;;;;;;;;
+; Module separation
+[module/pipe]
+type = custom/text
+content = "|"
+content-foreground = ${colors.foreground}
+
 ; Title of focused window
 [module/xwindow]
 type = internal/xwindow
@@ -143,6 +150,7 @@ label = %title:0:30:...%
 [module/i3]
 type   = internal/i3
 format = <label-state> <label-mode>
+format-font = 2
 
 ; Sort workspaces by index
 index-sort = true
@@ -155,31 +163,32 @@ wrapping-scroll = false
 strip-wsnumbers = true
 
 ; Symbols for workspaces
-ws-icon-0 = 1;
+ws-icon-0 = 1;%{F#FF5555}%{F-}
 ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
 ws-icon-6 = 7;
-ws-icon-7 = 8;
+ws-icon-7 = 8;
 ws-icon-8 = 9;
-ws-icon-9 = 10;
+ws-icon-9 = 10;%{F#50FA7B}%{F-}
 ws-icon-10 = 11;
 
-label-mode-padding    = 2
+label-mode-padding    = 1
 label-mode-foreground = ${colors.foreground}
 label-mode-background = ${colors.focused-ws}
+label-mode-font       = 1
 
 ; Settings for focused workspaces
 label-focused            = %icon%
 label-focused-background = ${colors.focused-ws}
 label-focused-underline  = ${colors.underline-ws}
-label-focused-padding    = 3
+label-focused-padding    = 1
 
 ; Settings for unfocused workspaces
 label-unfocused            = %icon%
-label-unfocused-padding    = 3
+label-unfocused-padding    = ${self.label-focused-padding}
 label-unfocused-foreground = ${colors.foreground-alt}
 
 ; Active workspace in different monitor
@@ -189,9 +198,9 @@ label-visible-underline  = ${self.label-focused-underline}
 label-visible-padding    = ${self.label-focused-padding}
 
 ; Urgent workspace
-label-urgent            = %icon%
-label-urgent-background = ${colors.urgent-ws}
-label-urgent-padding    = 3
+label-urgent           = %icon%
+label-urgent-underline = ${colors.urgent-ws}
+label-urgent-padding   = ${self.label-focused-padding}
 
 
 ; Spotify custom module based on
@@ -223,7 +232,7 @@ click-left  = "spotifyctl playpause"
 
 [module/spotify]
 type               = custom/ipc
-format-prefix      = "  "
+format-prefix      = " "
 format-prefix-font = 2
 hook-0             = echo ""
 hook-1             = spotifyctl -q status
@@ -231,19 +240,17 @@ hook-1             = spotifyctl -q status
 [module/date]
 type = internal/date
 ; Settings
-interval      = 5
-format-prefix = "  "
-time          = "%H:%M"
-time-alt      = "%d %b %Y"
-label         = %time%
+interval           = 5
+time               = %{T2}%{T-} %H:%M
+time-alt           = %{T2}%{T-} %d %b %Y
+label              = %time%
 
 [module/date-all]
 type = internal/date
 ; Settings
-interval      = 5
-format-prefix = "  "
-time          = "%H:%M     %d %b %Y"
-label         = %time%
+interval           = 5
+time               = %{T2}%{T-} %H:%M  %{T2}%{T-} %d %b %Y
+label              = %time%
 
 ; Cpu usage
 [module/cpu]
@@ -252,10 +259,11 @@ type = internal/cpu
 interval = 0.5
 
 ; Formatting
-format-prefix            = "CPU  "
+format-prefix            = "CPU "
 format-prefix-font       = 1
 format-prefix-foreground = ${colors.foreground-alt}
 format                   = <ramp-coreload>
+format-font              = 3
 
 ; Ramp settings
 ramp-coreload-0            = ▁
@@ -274,6 +282,7 @@ ramp-coreload-6            = ▇
 ramp-coreload-6-foreground = ${colors.red}
 ramp-coreload-7            = █
 ramp-coreload-7-foreground = ${colors.red}
+ramp-coreload-spacing = 0
 
 ; Ram memory usage
 [module/memory]
@@ -282,10 +291,11 @@ type = internal/memory
 interval = 1
 
 ; Formatting
-format-prefix            = "RAM  "
+format-prefix            = "RAM "
 format-prefix-font       = 1
 format-prefix-foreground = ${colors.foreground-alt}
 format                   = <ramp-used>
+format-font              = 3
 
 ; Ramp settings
 ramp-used-0            = ▁
@@ -309,36 +319,23 @@ ramp-used-7-foreground = ${colors.red}
 [module/pulseaudio]
 type = internal/pulseaudio
 
-; Formats for muted and not muted
-format-volume           = <ramp-volume>  <label-volume>
-label-volume            = %percentage%%
-label-volume-foreground = ${colors.foreground}
+; Format for not muted
+format-volume            = %{T2}<ramp-volume>%{T-} <label-volume>
+format-volume-font       = 1
+label-volume             = %percentage%%
+label-volume-foreground  = ${colors.foreground}
+format-volume-foreground = ${colors.foreground-alt}
+
+; Format for muted
 format-muted            = <label-muted>
-label-muted             =   %percentage%%
+label-muted             = %{T2}婢%{T-} %percentage%%
 label-muted-foreground  = ${colors.urgent-ws}
 
 ; Ramp volume
 ramp-volume-0 = 
 ramp-volume-1 = 
-ramp-volume-2 = 
-
-; Bar settings
-bar-volume-width            = 15
-bar-volume-foreground-0     = ${colors.yellow}
-bar-volume-foreground-1     = ${colors.yellow}
-bar-volume-foreground-2     = ${colors.green}
-bar-volume-foreground-3     = ${colors.green}
-bar-volume-foreground-4     = ${colors.green}
-bar-volume-foreground-5     = ${colors.red}
-bar-volume-foreground-6     = ${colors.red}
-bar-volume-gradient         = false
-bar-volume-indicator        = |
-bar-volume-indicator-font   = 2
-bar-volume-fill             = ─
-bar-volume-fill-font        = 2
-bar-volume-empty            = ─
-bar-volume-empty-font       = 2
-bar-volume-empty-foreground = ${colors.foreground}
+ramp-volume-2 = 墳
+ramp-volume-3 = 
 
 ; Battery module
 [module/battery]
@@ -349,21 +346,47 @@ full-at = 99
 
 ; Full label
 label-full              = %percentage%%
-format-full-prefix      = " "
+format-full-prefix      = " "
 format-full-prefix-font = 4
+format-full-prefix-foreground = ${colors.green}
 
 ; Charging
 label-charging  = ${self.label-full}
-format-charging = <ramp-capacity>  <label-charging>
+format-charging = <ramp-capacity> <label-charging>
 
 ; Discharging
 label-discharging  = ${self.label-full}
-label-discharging-foreground = ${colors.yellow}
-format-discharging = <ramp-capacity>  <label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
 
 ; Ramp symbols
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0            = 
+ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-1            = 
+ramp-capacity-1-foreground = ${colors.red}
+ramp-capacity-2            = 
+ramp-capacity-2-foreground = ${colors.red}
+ramp-capacity-3            = 
+ramp-capacity-3-foreground = ${colors.yellow}
+ramp-capacity-4            = 
+ramp-capacity-4-foreground = ${colors.yellow}
+ramp-capacity-5            = 
+ramp-capacity-5-foreground = ${colors.yellow}
+ramp-capacity-6            = 
+ramp-capacity-6-foreground = ${colors.green}
+ramp-capacity-7            = 
+ramp-capacity-7-foreground = ${colors.green}
+ramp-capacity-8            = 
+ramp-capacity-8-foreground = ${colors.green}
+ramp-capacity-9            = 
+ramp-capacity-9-foreground = ${colors.green}
+
+; Brightness module
+[module/light]
+type = custom/script
+; Settings
+interval          = 1
+exec              = light -G | awk '{printf "%.0f%\n", $1}'
+format            = %{T2}%{T-} <label>
+label             = %output%
+label-foreground  = ${colors.foreground}
+format-foreground = ${colors.foreground-alt}
