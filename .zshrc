@@ -254,6 +254,7 @@ alias gp='gitd push'
 alias gpl='gitd pull'
 alias gr='gitd rm'
 alias gs='gitd status'
+alias gf='gitd fetch'
 
 # LaTeX
 alias lmk="latexmk -pdf"
@@ -275,3 +276,6 @@ alias okular='QT_STYLE_OVERRIDE=Adwaita-Dark QT_QPA_PLATFORMTHEME=gtk3 okular'
 awkCom='{ match ($0, ".*==", a); gsub ("=", "", a[0]); print a[0] }'
 instCom='xargs -n1 pip install --upgrade'
 alias uppy="pip list --outdated --format=freeze | awk '$awkCom' | $instCom"
+
+# sudoedit
+alias se="EDITOR=nvim sudoedit"
