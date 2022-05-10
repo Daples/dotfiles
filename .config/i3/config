@@ -52,7 +52,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # Play/pause
-bindsym XF86AudioPlay exec spotifyctl playpause
+bindsym XF86AudioPlay exec "playerctl --player=spotify,%any play-pause"
 
 # Toggle touchpad
 bindsym XF86TouchpadToggle exec ~/.bin/touchpad_toggle
