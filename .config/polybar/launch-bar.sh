@@ -12,9 +12,9 @@ if type "xrandr"; then
     else
         for m in $monitors; do
             if [ $m == 'HDMI-0' ]; then
-                MONITOR=$m polybar --reload monitor2 &
-            else
                 MONITOR=$m polybar --reload jscbar &
+            else
+                MONITOR=$m polybar --reload monitor2 &
             fi
         done
     fi
