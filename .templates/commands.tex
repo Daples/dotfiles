@@ -1,0 +1,116 @@
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[utf8]{inputenc}
+
+
+%%%%%%%% SUB-FIGURE PACKAGE
+\usepackage{subcaption}
+
+%%%%%%%% MULTI-COLUMNS PACKAGE
+\usepackage{multicol}
+
+%%%%%%%% PERSONAL COMMANDS
+\usepackage{amssymb}
+
+%%%% 
+\newcommand{\NN}{{\mathbb{N}}}
+\newcommand{\LL}{{\mathbb{L}}}
+\newcommand{\ZZ}{{\mathbb{Z}}}
+\newcommand{\II}{{\mathbb{I}}}
+\newcommand{\QQ}{{\mathbb{Q}}}
+\newcommand{\RR}{{\mathbb{R}}}
+\newcommand{\WW}{{\mathbb{W}}}
+\newcommand{\VV}{{\mathbb{V}}}
+\renewcommand{\AA}{{\mathbb{A}}}
+\newcommand{\CC}{{\mathbb{C}}}
+\newcommand{\C}{{\mathcal{C}}}
+\newcommand{\R}{{\mathcal{R}}}
+\newcommand{\HH}{{\mathbb{H}}}
+\renewcommand{\H}{\mathcal{H}}
+\newcommand{\FF}{{\mathbb{F}}}
+\newcommand{\PP}{{\mathbb{P}}}
+\newcommand{\U}{{\mathcal{U}}}
+\newcommand{\V}{{\mathcal{V}}}
+\newcommand{\F}{{\mathcal{F}}}
+\newcommand{\X}{{\mathcal{X}}}
+\newcommand{\M}{{\mathcal{M}}}
+\newcommand{\MM}{{\mathbb{M}}}
+\newcommand{\Q}{{\mathcal{Q}}}
+\newcommand{\T}{{\mathcal{T}}}
+\newcommand{\Y}{{\mathcal{Y}}}
+\newcommand{\A}{{\mathcal{A}}}
+\newcommand{\TT}{{\mathbb{T}}}
+\newcommand{\G}{{\mathcal{G}}}
+\newcommand{\N}{{\mathcal{N}}}
+\renewcommand{\P}{{\mathcal{P}}}
+\renewcommand{\Q}{{\mathcal{Q}}}
+\newcommand{\W}{{\mathcal{W}}}
+\renewcommand{\S}{{\mathcal{S}}}
+\newcommand{\I}{{\mathcal{I}}}
+
+
+%% Superscript to the left
+% https://latex.org/forum/viewtopic.php?t=455
+\usepackage{tensor}
+\newcommand{\app}[3]{\tensor*[^{#1}]{\left(#2, #3\right)}{}}
+
+%%%% Make optional parameter
+% https://bit.ly/3jVGRwQ
+\usepackage{xparse}
+
+%%%% Create absolute value function
+% https://bit.ly/33Rkq6H
+\usepackage{mathtools}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+% Norm
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+% Argmax
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+%%%%%%%% LOGIC TREES
+\usepackage{prftree}
+
+%%%%%%%% SPLIT EQUATIONS
+% https://bit.ly/33P1OUM
+\allowdisplaybreaks
+
+%%%%%%%% FLOAT SPECIFIER
+% https://bit.ly/30Wi4BC
+\usepackage{float}
+
+%%%%%%%% TO USE SHORT COMMANDS FOR VECTOR LINES
+\usepackage{esvect}
+
+%%%%%%%% DIFFERENT FONTS FOR MATH
+\usepackage{mathrsfs}
+
+%%%%%%%% FOOTNOTE STUFF
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+%%%%%%%% Pseudo Code
+\usepackage[noend]{algpseudocode}
+\usepackage{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+%%%%%%%% DEFINITION AND THEOREM DEFINITIONS
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\theoremstyle{remark}
+\newtheorem{question}{Question}
+
+\newtheorem{theorem}{Theorem}[section]

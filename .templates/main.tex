@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}
+\usepackage[english]{babel}
+\input{commands.tex}
+
+%%%%%%%% MARGIN
+\geometry{verbose, letterpaper, tmargin=3cm,
+  bmargin=3cm,lmargin=2.5cm,rmargin=2.5cm}
+
+%%%%%%%% PARAGRAPH SETTINGS
+% https://bit.ly/36WrtN4
+\setlength\parindent{0pt}
+
+% https://bit.ly/371dvto
+\setlength{\parskip}{5pt}
+
+%%%%%%%% HYPERREF PACKAGE
+\usepackage{hyperref}
+\hypersetup{linkcolor=blue}
+\hypersetup{citecolor=blue}
+\hypersetup{urlcolor=blue}
+\hypersetup{colorlinks=true}
+
+
+%%%%%%%% BIB-LATEX STUFF
+\usepackage{csquotes}
+\usepackage[style=numeric,
+            bibstyle=numeric,
+            citestyle=numeric,
+            hyperref=true,
+            backend=biber]{biblatex}
+\addbibresource{ref.bib} %Put relative path to ref
+
+%%%%%%%% ENUMERATE LABEL
+% https://www.latex-tutorial.com/tutorials/lists/
+\usepackage{enumitem}
+
+%%%%%%%% CODE RENDERING !!! UNCOMMENT IF NEEDED !!!
+% Compile with flag -shell-escape
+%\usepackage{minted}
+
+%%%%%%%% START DOCUMENT
+
+\title{Generic}
+\author{David Plazas\\
+\date{\today}}
+
+
+\begin{document}
+\maketitle
+
+\section{Blah}
+x
+\printbibliography
+\end{document}
