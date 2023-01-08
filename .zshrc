@@ -225,7 +225,7 @@ esac
 
 # Environment variables
 export dav=/home/daples/Dropbox/DAVID-SAMUEL/_David_
-export int=/home/daples/Dropbox/DAVID-SAMUEL/_David_/internship-Belgium/1_internship
+export msc=/home/daples/Dropbox/DAVID-SAMUEL/_David_/applied-math-msc/2022-2
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 # Personal functions
@@ -269,6 +269,7 @@ alias ls='ls --color=always -v'
 # Autoremove
 alias autoremove="sudo pacman -Qdtq | sudo pacman -Rs -"
 
+
 # Okular theme
 alias okular='QT_STYLE_OVERRIDE=Adwaita-Dark QT_QPA_PLATFORMTHEME=gtk3 okular'
 
@@ -279,3 +280,6 @@ alias uppy="pip list --outdated --format=freeze | awk '$awkCom' | $instCom"
 
 # sudoedit
 alias se="EDITOR=nvim sudoedit"
+
+# vi
+alias vi="nvim"
