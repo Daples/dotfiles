@@ -145,9 +145,6 @@ shell:
   args:
     - -i
 
-alt_send_esc: true
-
-
 mouse:
   hide_when_typing: false
   hints:
